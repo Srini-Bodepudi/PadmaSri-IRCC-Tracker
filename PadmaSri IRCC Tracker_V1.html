@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PadmaSri IRCC Tracker</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="PadmaSri IRCC Tracker">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f6f8fb">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--ink:#0d0d0d;--mute:#8a8f98;--blue:#1e88f5;--orange:#c9792b;--line:#e4e8ee;--sh:0 2px 10px rgba(0,0,0,.06);--seg:#e8e9ed;--green:#1f9d63;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101418;--card:#1b2127;--ink:#f1f3f5;--mute:#98a1ab;--blue:#4aa3ff;--orange:#e39a55;--line:#2d363e;--sh:none;--seg:#262d34;--green:#4cc88f}}
+:root[data-theme="dark"]{--bg:#101418;--card:#1b2127;--ink:#f1f3f5;--mute:#98a1ab;--blue:#4aa3ff;--orange:#e39a55;--line:#2d363e;--sh:none;--seg:#262d34;--green:#4cc88f}
+*{box-sizing:border-box}html,body{margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font:16px/1.4 -apple-system,"SF Pro Text","Segoe UI",system-ui,sans-serif;padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+header{text-align:center;font:800 24px/1 -apple-system,"Segoe UI",sans-serif;padding:10px 0 16px;letter-spacing:-.5px}
+header span{color:var(--orange)}
+h2{font-size:30px;font-weight:800;margin:6px 0 12px;letter-spacing:-.5px}
+.lbl{color:var(--mute);font-size:15px;margin:18px 4px 8px}
+.card{background:var(--card);border-radius:18px;box-shadow:var(--sh);padding:14px 16px;margin-bottom:12px}
+.mi{display:flex;align-items:center;gap:14px}
+.mi .em{font-size:30px;width:40px;text-align:center}
+.mi .mid{flex:1;min-width:0}
+.mi b{font-size:18px;display:block;overflow-wrap:anywhere}
+.mi .dt{color:var(--mute);font-size:15px}
+.mi .n{text-align:center;min-width:76px;color:var(--blue)}
+.mi .n big{display:block;font-size:30px;font-weight:800;line-height:1}
+.mi .n small{font-size:14px}
+.n.fut{color:var(--green)}
+.clock{font:600 13px ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;color:var(--mute);margin-top:2px}
+.pill{display:block;margin:16px auto;background:var(--blue);color:#fff;border:0;border-radius:99px;padding:14px 34px;font:700 18px inherit;font-family:inherit;cursor:pointer}
+.sm{background:var(--blue);color:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:22px;cursor:pointer}
+.ghost{background:none;border:0;color:var(--mute);cursor:pointer;font:inherit;font-size:14px;padding:4px 8px}
+.seg{display:flex;background:var(--seg);border-radius:99px;padding:4px;margin-bottom:14px}
+.seg button{flex:1;border:0;background:none;padding:10px;border-radius:99px;font:700 15px inherit;font-family:inherit;color:var(--ink);cursor:pointer}
+.seg button[aria-selected="true"]{background:var(--card);box-shadow:var(--sh)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px}
+.stat{background:var(--card);border-radius:16px;padding:12px;box-shadow:var(--sh);text-align:center}
+.stat b{display:block;font-size:28px;color:var(--blue);font-weight:800}.stat span{font-size:13px;color:var(--mute)}
+.big{font:700 22px ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;color:var(--blue)}
+.big.fut{color:var(--green)}
+.empty{color:var(--mute);text-align:center;padding:24px;border:1px dashed var(--line);border-radius:16px}
+.tag{font-size:12px;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:1px 8px}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;align-items:flex-end;justify-content:space-around;padding:8px 12px calc(6px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--card) 82%,transparent);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-top:.5px solid var(--line);z-index:5}
+nav button{flex:1;max-width:130px;border:0;background:none;color:var(--mute);display:flex;flex-direction:column;align-items:center;gap:3px;font:600 11px -apple-system,"SF Pro Text",system-ui,sans-serif;cursor:pointer;padding:4px 0}
+nav button svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+nav button[aria-selected="true"]{color:var(--blue)}
+nav button.hero{margin-top:-28px;color:var(--mute)}
+nav button.hero .orb{width:60px;height:60px;border-radius:50%;background:var(--orange);display:grid;place-items:center;box-shadow:0 6px 16px rgba(201,121,43,.45);border:4px solid var(--bg)}
+nav button.hero svg{stroke:#fff;width:28px;height:28px}
+nav button.hero[aria-selected="true"]{color:var(--orange)}
+dialog{border:0;border-radius:24px;padding:20px;width:min(92%,420px);background:var(--card);color:var(--ink);box-shadow:0 10px 40px rgba(0,0,0,.3)}
+dialog::backdrop{background:rgba(0,0,0,.4)}
+dialog h3{margin:0 0 12px;font-size:20px}
+label{display:block;font-size:13px;color:var(--mute);margin:10px 0 4px}
+input,select{width:100%;font:inherit;padding:12px 14px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.acts{display:flex;gap:10px;margin-top:16px}.acts button{flex:1;border:0;border-radius:99px;padding:12px;font:700 16px inherit;font-family:inherit;cursor:pointer;background:var(--seg);color:var(--ink)}
+.acts .ok{background:var(--blue);color:#fff}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+
+:root{--bg:#f2f2f7;--card:#fff;--blue:#007aff;--line:#c6c6c8;--sh:none;--seg:#e5e5ea;--mute:#8e8e93}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--card:#1c1c1e;--blue:#0a84ff;--line:#38383a;--seg:#2c2c2e;--mute:#98989f}}
+header{position:sticky;top:0;z-index:4;margin:0 -16px 6px;padding:12px 16px;font:600 17px/1.2 -apple-system,"SF Pro Text",system-ui,sans-serif;letter-spacing:0;background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid var(--line)}
+h2{font-size:34px;font-weight:700;letter-spacing:.3px}
+.card,.stat{border-radius:12px;box-shadow:none}
+.seg{border-radius:9px;padding:2px}.seg button{border-radius:7px;font-weight:600;font-size:13px}
+.pill{border-radius:14px;width:100%;padding:15px;font-size:17px;font-weight:600}
+input,select{border-radius:10px}
+dialog{margin:auto auto 0;width:100%;max-width:520px;border-radius:14px 14px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+.acts button{border-radius:12px;padding:14px;font-size:17px}.acts .del{background:#e5484d;color:#fff}
+#cdlg{margin:auto;width:min(82%,300px);border-radius:14px;text-align:center;padding:20px 16px 16px}
+</style></head><body>
+<div class="wrap"><header>PadmaSri <span>IRCC Tracker</span></header><main id="view"></main></div>
+<nav role="tablist">
+<button role="tab" data-tab="applications"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/></svg>My Applications</button>
+<button role="tab" class="hero" data-tab="dashboard"><span class="orb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></span>Dashboard</button>
+<button role="tab" data-tab="timeline"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Timeline</button></nav>
+<dialog id="cdlg"><h3 id="cmsg"></h3><div class="acts"><button type="button" id="cno">No</button><button type="button" class="del" id="cyes">Yes</button></div></dialog>
+<dialog id="dlg"><form id="f"><h3 id="dt"></h3><div id="fields"></div>
+<div class="acts"><button type="button" id="cancel">Cancel</button><button class="ok" type="submit">Save</button></div></form></dialog>
+<script>
+const KEY="prTracker.v1";let S={apps:[],ms:[]};
+try{const r=localStorage.getItem(KEY);if(r)S=JSON.parse(r)}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,"0");
+const esc=t=>String(t??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const uid=()=>Math.random().toString(36).slice(2,10);
+const nowLocal=()=>{const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,16)};
+const fmt=ts=>new Date(ts).toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"});
+function clock(ts){let d=Date.now()-ts;const fut=d<0;d=Math.abs(d);const s=Math.floor(d/1000);
+ return{days:Math.floor(s/86400),fut,txt:`${Math.floor(s/86400)}d ${pad(Math.floor(s%86400/3600))}h ${pad(Math.floor(s%3600/60))}m ${pad(s%60)}s`}}
+const EM=[["biometric","👋"],["medical","🏥"],["aor","📮"],["submit","📝"],["ita","📝"],["bowp","📝"],["ecopr","🎉"],["portal","🔑"],["background","✔️"],["pr card","🪪"],["passport","🛂"],["approved","✅"],["completed","✅"]];
+const APPTYPES=["CEC Express Entry PR","BOWP","SOWP","Visitor Visa","TRV","Citizenship","OCI","Passport","Other"];
+const PRESETS=["ITA","Application Submitted","AOR Received","BOWP","Biometrics Requested","Biometrics Completed","BOWP Approved","Medical Requested","Medical Passed","Background Check Completed","Portal 1","Portal 2","eCOPR"];
+const guess=t=>{t=t.toLowerCase();return(EM.find(e=>t.includes(e[0]))||[0,"📌"])[1]};
+const appName=id=>(S.apps.find(a=>a.id===id)||{}).name||"Unknown";
+const start=a=>Math.min(a.ts,...S.ms.filter(m=>m.appId===a.id).map(m=>m.ts));
+function seed(){if(S.apps.length||S.ms.length)return;
+ const a={id:uid(),name:"Express Entry PR",type:"Express Entry",ts:new Date("2026-03-17T12:00").getTime()};S.apps.push(a);
+ [["ITA","2026-01-21"],["Application Submitted","2026-03-17"],["AOR Received","2026-03-17"],["BOWP","2026-03-21"],["Biometrics Requested","2026-05-12"],["Biometrics Completed","2026-05-25"],["BOWP Approved","2026-06-13"],["Medical Passed","2026-06-16"],["Background Check Completed","2026-10-15"],["Portal 1","2026-10-21"],["Portal 2","2026-10-29"],["eCOPR","2026-11-02"]]
+ .forEach(([t,d])=>S.ms.push({id:uid(),appId:a.id,title:t,emoji:guess(t),ts:new Date(d+"T12:00").getTime()}));save()}
+seed();
+const card=(m,showApp)=>{const c=clock(m.ts);return `<div class="card mi"><div class="em">${m.emoji||guess(m.title)}</div>
+<div class="mid"><b>${esc(m.title)}</b><div class="dt">${fmt(m.ts)}${showApp?` · ${esc(appName(m.appId))}`:""}</div><div class="clock" data-ts="${m.ts}">${c.txt}</div></div>
+<div class="n${c.fut?" fut":""}"><big>${c.days}</big><small>${c.fut?"days left":"days ago"}</small></div>
+<button class="ghost" data-del-ms="${m.id}" aria-label="Delete milestone">✕</button></div>`};
+const sorted=l=>[...l].sort((a,b)=>a.ts-b.ts);
+function dashboard(){
+ const f=S.apps.length?Math.min(...S.apps.map(start)):null;
+ let h=`<h2>Dashboard</h2><div class="stats"><div class="stat"><b>${S.apps.length}</b><span>Applications</span></div><div class="stat"><b>${S.ms.length}</b><span>Milestones</span></div><div class="stat"><b>${f?clock(f).days:0}</b><span>Days since start</span></div></div>
+ <div class="lbl">My applications</div>`;
+ h+=S.apps.length?S.apps.map(a=>{const s=start(a),c=clock(s),l=S.ms.filter(m=>m.appId===a.id&&m.ts<=Date.now()).sort((x,y)=>y.ts-x.ts)[0];
+ return `<div class="card"><div class="row"><b>${esc(a.name)}</b>${a.type&&a.type!==a.name?`<span class="tag">${esc(a.type)}</span>`:""}</div><div class="dt" style="color:var(--mute)">Started ${fmt(s)} · ${c.days} days ago</div>
+ <div class="big" data-ts="${s}">${c.txt}</div><div class="dt" style="color:var(--mute);margin-top:6px">${l?"Latest: "+esc(l.title)+" ("+clock(l.ts).days+" days ago)":"No milestones yet"}</div></div>`}).join(""):`<div class="empty">No applications yet.</div>`;
+ h+=`<div class="lbl">Recent milestones</div>`+(S.ms.length?[...S.ms].sort((a,b)=>b.ts-a.ts).slice(0,5).map(m=>card(m,true).replace(/<button class="ghost".*?<\/button>/,"")).join(""):`<div class="empty">Nothing yet.</div>`);
+ return h}
+function applications(){
+ let h=`<div class="row"><h2>My Applications</h2><button class="sm" data-open="app" aria-label="Add application">+</button></div>`;
+ if(!S.apps.length)return h+`<div class="empty">Tap + to add your first application.</div>`;
+ return h+S.apps.map(a=>{const ms=sorted(S.ms.filter(m=>m.appId===a.id)),s=start(a),c=clock(s);
+ return `<div class="lbl row"><span><b style="color:var(--ink);font-size:18px">${esc(a.name)}</b> ${a.type&&a.type!==a.name?`<span class="tag">${esc(a.type)}</span>`:""}</span><button class="ghost" data-del-app="${a.id}">Delete</button></div>
+ <div class="card"><div class="dt" style="color:var(--mute)">Since ${fmt(s)}</div><div class="big" data-ts="${s}">${c.txt}</div></div>
+ ${ms.map(m=>card(m,false)).join("")}<button class="pill" style="padding:10px 24px;font-size:16px" data-open="ms" data-app="${a.id}">Add Milestone</button>`}).join("")}
+let tl="all";
+function timeline(){
+ let h=`<div class="seg"><button data-seg="all" aria-selected="${tl==="all"}">All milestones</button>${S.apps.map(a=>`<button data-seg="${a.id}" aria-selected="${tl===a.id}">${esc(a.name)}</button>`).join("")}</div>
+ <div class="row"><h2>My Timeline</h2><button class="sm" data-open="ms" aria-label="Add milestone">+</button></div>`;
+ const l=sorted(S.ms.filter(m=>tl==="all"||m.appId===tl));
+ return h+(l.length?l.map(m=>card(m,tl==="all")).join(""):`<div class="empty">No milestones yet.</div>`)+(S.apps.length?`<button class="pill" data-open="ms">Add Milestone</button>`:"")}
+const views={dashboard,applications,timeline};
+const tab=()=>{const h=location.hash.slice(1);return views[h]?h:"dashboard"};
+function render(){const t=tab();document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===t));$("#view").innerHTML=views[t]()}
+let mode,pre;
+function openDlg(m,app){mode=m;pre=app;const d=$("#dlg");
+ if(m==="app"){$("#dt").textContent="Add Application";$("#fields").innerHTML=`<label>Application type</label><select name="type" id="atype">${APPTYPES.map(p=>`<option>${p}</option>`).join("")}</select><input name="name" id="aname" maxlength="60" placeholder="Enter application name" hidden style="margin-top:8px"><label>Submitted on</label><input type="datetime-local" name="when" value="${nowLocal()}" required>`}
+ else{if(!S.apps.length){alert("Add an application first.");return}
+  $("#dt").textContent="Add Milestone";$("#fields").innerHTML=`<label>Application</label><select name="appId">${S.apps.map(a=>`<option value="${a.id}" ${a.id===(app||(tl!=="all"?tl:""))?"selected":""}>${esc(a.name)}</option>`).join("")}</select><label>Milestone</label><select name="pick" id="pick">${[...PRESETS].sort((a,b)=>a.localeCompare(b)).map(p=>`<option>${p}</option>`).join("")}<option value="__custom">Custom</option></select><input name="custom" id="custom" maxlength="80" placeholder="Enter milestone name" hidden style="margin-top:8px"><label>Date and time</label><input type="datetime-local" name="when" value="${nowLocal()}" required>`}
+ d.showModal()}
+let cb;function ask(m,f){$("#cmsg").textContent=m;cb=f;$("#cdlg").showModal()}
+$("#cno").onclick=()=>$("#cdlg").close();
+$("#cyes").onclick=()=>{$("#cdlg").close();cb&&cb()};
+$("#cancel").onclick=()=>$("#dlg").close();
+$("#f").onsubmit=e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target)),ts=new Date(d.when).getTime();if(isNaN(ts))return;
+ if(mode==="app"){const n=d.type==="Other"?(d.name||"").trim():d.type;if(!n)return;S.apps.push({id:uid(),name:n,type:d.type,ts})}else{const t=(d.pick==="__custom"?(d.custom||""):d.pick).trim();if(!t)return;S.ms.push({id:uid(),appId:d.appId,title:t,emoji:guess(t),ts})}
+ save();$("#dlg").close();render()};
+document.addEventListener("click",e=>{const g=s=>e.target.closest(s);
+ if(g("nav button")){location.hash=g("nav button").dataset.tab;return}
+ if(g("[data-open]")){openDlg(g("[data-open]").dataset.open,g("[data-open]").dataset.app);return}
+ if(g("[data-seg]")){tl=g("[data-seg]").dataset.seg;render();return}
+ const a=g("[data-del-app]"),m=g("[data-del-ms]");
+ if(a)ask("Delete this application and all its milestones?",()=>{S.apps=S.apps.filter(x=>x.id!==a.dataset.delApp);S.ms=S.ms.filter(x=>x.appId!==a.dataset.delApp);if(tl===a.dataset.delApp)tl="all";save();render()});
+ if(m)ask("Delete this milestone?",()=>{S.ms=S.ms.filter(x=>x.id!==m.dataset.delMs);save();render()});});
+addEventListener("hashchange",render);
+document.addEventListener("change",e=>{if(e.target.id==="atype"){const c=$("#aname");c.hidden=e.target.value!=="Other";c.required=!c.hidden;if(!c.hidden)c.focus()}
+ if(e.target.id==="pick"){const c=$("#custom");c.hidden=e.target.value!=="__custom";c.required=!c.hidden;if(!c.hidden)c.focus()}});
+setInterval(()=>{document.querySelectorAll("[data-ts]").forEach(el=>el.textContent=clock(+el.dataset.ts).txt)},1000);
+render();
+</script></body></html>
