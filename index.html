@@ -100,11 +100,7 @@ const PRESETS=["ITA","Application Submitted","AOR Received","BOWP","Biometrics R
 const guess=t=>{t=t.toLowerCase();return(EM.find(e=>t.includes(e[0]))||[0,"📌"])[1]};
 const appName=id=>(S.apps.find(a=>a.id===id)||{}).name||"Unknown";
 const start=a=>Math.min(a.ts,...S.ms.filter(m=>m.appId===a.id).map(m=>m.ts));
-function seed(){if(S.apps.length||S.ms.length)return;
- const a={id:uid(),name:"Express Entry PR",type:"Express Entry",ts:new Date("2026-03-17T12:00").getTime()};S.apps.push(a);
- [["ITA","2026-01-21"],["Application Submitted","2026-03-17"],["AOR Received","2026-03-17"],["BOWP","2026-03-21"],["Biometrics Requested","2026-05-12"],["Biometrics Completed","2026-05-25"],["BOWP Approved","2026-06-13"],["Medical Passed","2026-06-16"],["Background Check Completed","2026-10-15"],["Portal 1","2026-10-21"],["Portal 2","2026-10-29"],["eCOPR","2026-11-02"]]
- .forEach(([t,d])=>S.ms.push({id:uid(),appId:a.id,title:t,emoji:guess(t),ts:new Date(d+"T12:00").getTime()}));save()}
-seed();
+try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
 const card=(m,showApp)=>{const c=clock(m.ts);return `<div class="card mi"><div class="em">${m.emoji||guess(m.title)}</div>
 <div class="mid"><b>${esc(m.title)}</b><div class="dt">${fmt(m.ts)}${showApp?` · ${esc(appName(m.appId))}`:""}</div><div class="clock" data-ts="${m.ts}">${c.txt}</div></div>
 <div class="n${c.fut?" fut":""}"><big>${c.days}</big><small>${c.fut?"days left":"days ago"}</small></div>
@@ -118,6 +114,7 @@ function dashboard(){
  return `<div class="card"><div class="row"><b>${esc(a.name)}</b>${a.type&&a.type!==a.name?`<span class="tag">${esc(a.type)}</span>`:""}</div><div class="dt" style="color:var(--mute)">Started ${fmt(s)} · ${c.days} days ago</div>
  <div class="big" data-ts="${s}">${c.txt}</div><div class="dt" style="color:var(--mute);margin-top:6px">${l?"Latest: "+esc(l.title)+" ("+clock(l.ts).days+" days ago)":"No milestones yet"}</div></div>`}).join(""):`<div class="empty">No applications yet.</div>`;
  h+=`<div class="lbl">Recent milestones</div>`+(S.ms.length?[...S.ms].sort((a,b)=>b.ts-a.ts).slice(0,5).map(m=>card(m,true).replace(/<button class="ghost".*?<\/button>/,"")).join(""):`<div class="empty">Nothing yet.</div>`);
+ h+=`<div class="lbl">Backup</div><div class="seg"><button data-bk="export">Copy backup</button><button data-bk="import">Restore backup</button></div>`;
  return h}
 function applications(){
  let h=`<div class="row"><h2>My Applications</h2><button class="sm" data-open="app" aria-label="Add application">+</button></div>`;
@@ -151,10 +148,14 @@ $("#f").onsubmit=e=>{e.preventDefault();const d=Object.fromEntries(new FormData(
 document.addEventListener("click",e=>{const g=s=>e.target.closest(s);
  if(g("nav button")){location.hash=g("nav button").dataset.tab;return}
  if(g("[data-open]")){openDlg(g("[data-open]").dataset.open,g("[data-open]").dataset.app);return}
+ if(g("[data-bk]")){backup(g("[data-bk]").dataset.bk);return}
  if(g("[data-seg]")){tl=g("[data-seg]").dataset.seg;render();return}
  const a=g("[data-del-app]"),m=g("[data-del-ms]");
  if(a)ask("Delete this application and all its milestones?",()=>{S.apps=S.apps.filter(x=>x.id!==a.dataset.delApp);S.ms=S.ms.filter(x=>x.appId!==a.dataset.delApp);if(tl===a.dataset.delApp)tl="all";save();render()});
  if(m)ask("Delete this milestone?",()=>{S.ms=S.ms.filter(x=>x.id!==m.dataset.delMs);save();render()});});
+function backup(k){
+ if(k==="export"){const j=JSON.stringify(S);(navigator.clipboard?navigator.clipboard.writeText(j):Promise.reject()).then(()=>alert("Backup copied. Paste it into Notes to keep it safe.")).catch(()=>prompt("Copy this backup:",j))}
+ else{const t=prompt("Paste your backup here:");if(!t)return;try{const o=JSON.parse(t);if(!Array.isArray(o.apps)||!Array.isArray(o.ms))throw 0;S=o;save();render()}catch(e){alert("That backup is not valid.")}}}
 addEventListener("hashchange",render);
 document.addEventListener("change",e=>{if(e.target.id==="atype"){const c=$("#aname");c.hidden=e.target.value!=="Other";c.required=!c.hidden;if(!c.hidden)c.focus()}
  if(e.target.id==="pick"){const c=$("#custom");c.hidden=e.target.value!=="__custom";c.required=!c.hidden;if(!c.hidden)c.focus()}});
